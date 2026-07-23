@@ -135,10 +135,6 @@ The room remains cold, so the agent receives a reward of −5.
 
 ## Graphical Representation
 
-Write your answer here.
-
-Draw the MDP graph.
-
 The graph should include:
 
 1. States as nodes.
@@ -151,29 +147,69 @@ The graph should include:
 
 ## Python Representation
 
-Write your code here.
-
-Use Python dictionaries to represent the MDP.
-
 
 ```python
+# State Mapping
+# 0 = Cold
+# 1 = Comfortable
+# 2 = Hot
+
+# Action Mapping
+# 0 = Increase Temperature
+# 1 = Maintain Temperature
+# 2 = Decrease Temperature
 # MDP Representation using Python
-# print("Name:       ")
-# print("Register Number:     ")
+print("Name: PRIYADHARSHINI S")
+print("Register Number: 212223240129")
+
+mdp = {
+    0: {
+        0: [(0.8, 1, 10.0, False),
+            (0.2, 0, -5.0, False)],
+
+        1: [(0.7, 0, -5.0, False),
+            (0.3, 1, 10.0, False)],
+
+        2: [(0.9, 0, -5.0, False),
+            (0.1, 1, 0.0, False)]
+    },
+
+    1: {
+        0: [(0.8, 1, 5.0, False),
+            (0.2, 2, -5.0, False)],
+
+        1: [(0.9, 1, 5.0, False),
+            (0.1, 2, -5.0, False)],
+
+        2: [(0.8, 1, 5.0, False),
+            (0.2, 0, -5.0, False)]
+    },
+
+    2: {
+        0: [(0.9, 2, -5.0, False),
+            (0.1, 1, 0.0, False)],
+
+        1: [(0.7, 2, -5.0, False),
+            (0.3, 1, 5.0, False)],
+
+        2: [(0.8, 1, 10.0, False),
+            (0.2, 2, -5.0, False)]
+    }
+}
+
+print(mdp)
 
 ```
 ---
 ## Output
 
-Write your Python output here.
-
+<img width="1371" height="153" alt="image" src="https://github.com/user-attachments/assets/628b5115-643a-40a9-bcd8-0de13a3580b9" />
 
 ---
 
 ## Result
 
-Write your result here.
-
+The smart room temperature control problem was successfully represented as a Markov Decision Process. The temperature conditions were represented using numerical states 0, 1, and 2, while the possible thermostat actions were represented using numerical actions 0, 1, and 2. Transition probabilities and rewards were defined to model the changes in room temperature and encourage the thermostat to maintain a comfortable temperature.
 
 
 ---
