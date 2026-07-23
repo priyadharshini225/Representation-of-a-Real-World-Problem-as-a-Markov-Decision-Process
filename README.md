@@ -3,11 +3,7 @@
 
 ## Aim
 
-Write your aim here.
-
-Example:
-
-> To identify a real-world sequential decision-making problem and represent it formally as a Markov Decision Process by defining its states, actions, rewards, transitions, and Python representation.
+To represent the real-world problem of smart room temperature control as a Markov Decision Process by defining its states, actions, transition probabilities, rewards, and Python representation.
 
 ---
 
@@ -15,10 +11,9 @@ Example:
 
 ### Problem Description
 
-Write your answer here.
+A smart thermostat automatically controls the temperature of a room. It observes the current room temperature and decides whether to increase the temperature, decrease the temperature, or maintain the current temperature.
 
-Describe the real-world application that you selected.
-
+The objective is to maintain a comfortable temperature while reducing unnecessary energy consumption. This problem can be represented as a Markov Decision Process because the next room temperature depends on the current temperature and the action taken.
 
 ---
 
@@ -44,95 +39,95 @@ Where:
 
 ## State Space
 
-Write your answer here.
+The states represent the current temperature condition of the room.
 
-The state space should list all possible situations in which the agent can exist.
-
-Example format:
-
-```text
-S = {
-    State 1,
-    State 2,
-    State 3,
-    ...
-}
-```
-
-
+S={0,1,2}
+| State Number | Meaning     |
+| ------------ | ----------- |
+| **0**        | Cold        |
+| **1**        | Comfortable |
+| **2**        | Hot         |
 
 ---
 
 ## Sample State
 
-Write your answer here.
+s= 0
 
-A sample state is one specific example from the state space.
-
+This means the room is Cold.
 
 
 ---
 
 ## Action Space
 
-Write your answer here.
+You can also represent actions using numbers:
 
-The action space should list all possible actions available to the agent.
-
-Example format:
-
-```text
-A = {
-    Action 1,
-    Action 2,
-    Action 3,
-    ...
-}
-```
+A={0,1,2}
+| Action Number | Action               |
+| ------------- | -------------------- |
+| **0**         | Increase Temperature |
+| **1**         | Maintain Temperature |
+| **2**         | Decrease Temperature |
 
 
 ---
 
 ## Sample Action
 
-Write your answer here.
+a=0
 
-A sample action is one action selected from the action space.
-
-
+This means Increase Temperature.
 
 ---
 
 ## Transition Probability
 
-Write your answer here.
-
 The transition probability explains how the environment moves from one state to another after an action is taken.
 
 General form:
 
-$$
-P(s' \mid s,a)
-$$
+P(s
+′
+∣s,a)
 
-This means:
+This means the probability of reaching the next state s
+′
+ after taking action a in the current state s.
 
-> Probability of reaching next state $s'$ after taking action $a$ in current state $s$.
+Example:
 
+P(1∣0,0)=0.8
+
+This means that if the current state is 0 (Cold) and action 0 (Increase Temperature) is taken, there is an 80% probability of moving to state 1 (Comfortable).
 
 ---
 
 ## Reward Function
 
-Write your answer here.
-
 The reward function defines the feedback received by the agent after taking an action.
 
 General form:
 
-$$
-R(s,a,s')
-$$
+R(s,a,s
+′
+)
+
+The rewards are defined as:
+
++10 → Room reaches a comfortable temperature.
++5 → Room remains comfortable.
+−5 → Room remains too cold or too hot.
+
+Examples:
+
+R(0,0,1)=+10
+
+The room changes from Cold (0) to Comfortable (1), so the agent receives a reward of +10.
+
+R(0,0,0)=−5
+
+The room remains cold, so the agent receives a reward of −5.
 
 
 
