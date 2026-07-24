@@ -135,12 +135,8 @@ The room remains cold, so the agent receives a reward of −5.
 
 ## Graphical Representation
 
-The graph should include:
+<img width="1735" height="906" alt="ChatGPT Image Jul 24, 2026, 08_40_48 AM" src="https://github.com/user-attachments/assets/2b87228e-38ac-4ed6-936a-f1cbe4a5afba" />
 
-1. States as nodes.
-2. Actions as arrows.
-3. Rewards on transitions.
-4. Transition probabilities if applicable.
 
 
 ---
@@ -149,16 +145,9 @@ The graph should include:
 
 
 ```python
-# State Mapping
-# 0 = Cold
-# 1 = Comfortable
-# 2 = Hot
 
-# Action Mapping
-# 0 = Increase Temperature
-# 1 = Maintain Temperature
-# 2 = Decrease Temperature
 # MDP Representation using Python
+
 print("Name: PRIYADHARSHINI S")
 print("Register Number: 212223240129")
 
